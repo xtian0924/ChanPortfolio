@@ -32,7 +32,8 @@ ul {
 body {
   font-family: 'Poppins', sans-serif;
   background: #000;
-  border: 5px solid #fff;
+  border-right: 5px dotted #fff;
+  border-left: 5px dotted #fff;
 }
 
 header {
@@ -62,7 +63,10 @@ header {
 
 header #logo {
   height: 100%;
-  margin: auto 0;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   color: #fff;
   -webkit-transition: opacity 1.5s ease-in-out;
   transition: opacity 1.5s ease-in-out;
@@ -76,7 +80,8 @@ header #logo {
 
 header #logo h1 {
   font-weight: 400;
-  margin-top: 5px;
+  margin: 0;
+  padding: 0;
 }
 
 header nav {
@@ -86,6 +91,8 @@ header nav {
 
 header nav span#menu {
   height: 100%;
+  display: block;
+  position: relative;
   color: #fff;
   -webkit-transition: opacity 1.5s ease-in-out;
   transition: opacity 1.5s ease-in-out;
@@ -98,7 +105,11 @@ header nav span#menu {
 }
 
 header nav span#menu i {
-  margin-top: 23px;
+  height: auto;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-70%);
+          transform: translateY(-70%);
 }
 
 header nav span#menu:hover {
@@ -131,7 +142,12 @@ header nav #ul1 {
 
 header nav #ul1 li {
   text-align: center;
-  padding: 5px 0;
+}
+
+@media (min-width: 768px) {
+  header nav #ul1 li {
+    display: none !important;
+  }
 }
 
 header nav #ul1 li a {
@@ -141,15 +157,23 @@ header nav #ul1 li a {
   text-transform: uppercase;
 }
 
-header nav #ul1 li a:hover {
+header nav #ul1 li a:focus {
   border-bottom: 2px solid #fff;
+}
+
+@media (min-width: 768px) {
+  header nav #ul1 li a:hover {
+    border-bottom: 2px solid #fff;
+  }
 }
 
 header nav #ul1 span#close {
   font-size: 20px;
   font-weight: bold;
   height: auto;
-  top: 3px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   position: relative;
   color: #fff;
 }
@@ -186,7 +210,7 @@ header nav #ul2 {
     text-transform: uppercase;
     color: #fff;
     display: block;
-    margin-top: 18px;
+    margin-top: 13px;
   }
 }
 
@@ -309,8 +333,7 @@ main .main-content .name a:hover {
 section#skills {
   background-color: #000;
   color: #fff;
-  border-top: 5px solid #fff;
-  border-bottom: 5px solid #fff;
+  padding-bottom: 30px;
 }
 
 section#skills h1 {
@@ -401,12 +424,12 @@ section#projects .projects-content .project {
 
 section#projects .projects-content .project a {
   width: 100%;
-  cursor: pointer;
   text-decoration: none;
 }
 
 section#projects .projects-content .project a:hover {
   opacity: 0.8;
+  cursor: pointer;
 }
 
 section#projects .projects-content .project a img {
@@ -420,24 +443,29 @@ section#projects .projects-content .project a img {
   }
 }
 
-section#projects .projects-content .project h1 {
+section#projects .projects-content .project a h1 {
   margin: 10px 0;
+  color: #fff;
 }
 
-section#projects .projects-content .project h1:hover {
+section#projects .projects-content .project a h1:focus {
   color: purple;
 }
 
 @media (min-width: 768px) {
-  section#projects .projects-content .project h1 {
+  section#projects .projects-content .project a h1 {
     font-size: 20px;
     font-weight: bolder;
     margin: 15px 0;
   }
+  section#projects .projects-content .project a h1:hover {
+    color: purple;
+    cursor: pointer;
+  }
 }
 
 section#projects .projects-content .project p {
-  text-align: justify;
+  text-align: left;
   padding-bottom: 15px;
   color: #fff;
   text-transform: capitalize;
@@ -467,6 +495,13 @@ section#projects .projects-content .project a.view:hover {
 
 section#contacts {
   color: #fff;
+  padding-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+  section#contacts {
+    padding-bottom: 30px;
+  }
 }
 
 section#contacts h1 {
@@ -550,6 +585,7 @@ section#contacts .contacts-content div .icons a {
 
 footer {
   background: #000;
+  z-index: 5;
   color: #ffffff;
   height: 5vh;
   border-left: 5px solid #fff;

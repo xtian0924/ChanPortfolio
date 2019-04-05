@@ -48,7 +48,8 @@ ul{
 body{
     font-family: 'Poppins', sans-serif;
     background: #000;
-    border: $border-solid-w;
+    border-right: $border-dotted-w;
+    border-left: $border-dotted-w;
 }
 
 header{
@@ -69,20 +70,27 @@ header{
     width: 70%;
     margin: 0 auto;
     transition: top 0.5s;
+    
 
     #logo{
         height: 100%;
-        margin: auto 0;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
         color: #fff;
         transition: opacity 1.5s ease-in-out;
-    
+        
         @include desktop{
             display: block !important;
+            
         }
+    
+
 
         h1{
             font-weight: 400;
-            margin-top: 5px; 
+            margin: 0;
+            padding: 0;
         }
     }
 
@@ -92,6 +100,8 @@ header{
 
         span#menu{
             height: 100%;
+            display: block;
+            position: relative;
             color: #fff;
             transition: opacity 1.5s ease-in-out;
             
@@ -100,13 +110,17 @@ header{
             }
 
             i{
-                margin-top: 23px;
+                height: auto;
+                position: relative;
+                top: 50%;
+                transform: translateY(-70%);
             }
 
             &:hover{
                 color: #666666;
                 cursor: pointer;
             } 
+
         }    
 
         #ul1{
@@ -127,7 +141,10 @@ header{
               
             li{
                 text-align: center;
-                padding: 5px 0;
+                
+            @include desktop{
+                display: none !important;
+            }
                 
                 a{
                     font-size: 70%;
@@ -135,9 +152,15 @@ header{
                     color: #fff;
                     text-transform: uppercase;
                    
-                    &:hover{
+                    &:focus{
                         border-bottom: 2px solid #fff;
                     }
+                    @include desktop{
+                        &:hover{
+                            border-bottom: 2px solid #fff;
+                        }
+                    }
+                   
                 }
             }
 
@@ -145,7 +168,8 @@ header{
                 font-size: 20px;
                 font-weight: bold;
                 height: auto;
-                top: 3px;
+                top: 50%;
+                transform: translateY(-50%);
                 position: relative;
                 color: #fff;
 
@@ -179,7 +203,7 @@ header{
                         text-transform: uppercase;
                         color: #fff;
                         display: block;
-                        margin-top: 18px;
+                        margin-top: 13px;
                     }
                 }
                 
@@ -294,8 +318,9 @@ main{
 section#skills{
     background-color: #000;
     color: #fff;
-    border-top: $border-solid-w;
-    border-bottom: $border-solid-w;
+    padding-bottom: 30px;
+    // border-top: $border-solid-w;
+    // border-bottom: $border-solid-w;
 
     h1{
         text-transform: uppercase;
@@ -354,7 +379,6 @@ section#projects{
     }
 
     .projects-content{
-
         @include desktop{
             display: grid;
             grid-column-gap: 20px;
@@ -373,12 +397,11 @@ section#projects{
 
             a{
                 width: 100%;
-                cursor: pointer;
                 text-decoration: none;
 
                 &:hover{
                     opacity: 0.8;
-                    
+                    cursor: pointer;
                 }
                 
 
@@ -392,23 +415,29 @@ section#projects{
                 }
             }
            
-
-            h1{
-                margin: 10px 0;
-
-                &:hover{
-                    color: purple;
-                }
-
-                @include desktop{
-                    font-size: 20px;   
-                    font-weight: bolder;
-                    margin: 15px 0;
-                }
+            a{
+                h1{
+                    margin: 10px 0;
+                    color: #fff;
+                    &:focus{
+                        color: purple;
+                    }
+    
+                    @include desktop{
+                        font-size: 20px;   
+                        font-weight: bolder;
+                        margin: 15px 0;
+                        &:hover{
+                            color: purple;
+                            cursor: pointer;
+                        }
+                    }
+                }  
             }
+          
 
             p{
-                text-align: justify;
+                text-align: left;
                 padding-bottom: 15px;
                 color: #fff;
                 text-transform: capitalize;
@@ -441,6 +470,10 @@ section#projects{
 
 section#contacts{
     color: #fff;
+    padding-bottom: 50px;
+    @include desktop{
+        padding-bottom: 30px;
+    }
 
     h1{
         text-align: center;
@@ -514,6 +547,7 @@ section#contacts{
 
 footer{
     background: #000;
+    z-index: 5;
     color: #ffffff;
     height: 5vh;  
     border-left:$border-solid-w;
