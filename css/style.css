@@ -486,7 +486,7 @@ section#projects .projects-content .project p {
 section#projects .projects-content .project a.view {
   display: block;
   text-align: center;
-  margin: 15px auto;
+  margin: 15px auto 0 auto;
   padding: 10px 5px;
   text-decoration: none;
   color: #ffffff;
@@ -495,13 +495,21 @@ section#projects .projects-content .project a.view {
   border: 1px solid #fff;
   width: 50%;
   margin-top: auto;
-  margin-bottom: 80px;
+  margin-bottom: 20px;
 }
 
 section#projects .projects-content .project a.view:hover {
   background: white;
   color: black;
   border: 1px solid black;
+}
+
+section#projects .projects-content .project h4 {
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  margin: 0 0 10px 0;
+  padding: 0;
 }
 
 section#contacts {
