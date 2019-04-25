@@ -504,11 +504,110 @@ section#projects .projects-content .project a.view:hover {
   border: 1px solid black;
 }
 
-section#projects .projects-content .project h4 {
+section#wordpress h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 400;
+  color: #fff;
+  font-size: 30px;
+  margin: 30px 0 20px 0;
+}
+
+@media (min-width: 768px) {
+  section#wordpress .wordpress-content {
+    display: -ms-grid;
+    display: grid;
+    grid-column-gap: 20px;
+    -ms-grid-columns: 45% 45%;
+        grid-template-columns: 45% 45%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+section#wordpress .wordpress-content .wordpress {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  section#wordpress .wordpress-content .wordpress {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+section#wordpress .wordpress-content .wordpress a {
+  width: 100%;
+  text-decoration: none;
+}
+
+section#wordpress .wordpress-content .wordpress a:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+section#wordpress .wordpress-content .wordpress a img {
+  margin-top: 30px;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  section#wordpress .wordpress-content .wordpress a img {
+    height: 400px;
+    width: 70%;
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
+section#wordpress .wordpress-content .wordpress a h1 {
+  margin: 10px 0;
+  color: #fff;
+}
+
+section#wordpress .wordpress-content .wordpress a h1:focus {
+  color: purple;
+}
+
+@media (min-width: 768px) {
+  section#wordpress .wordpress-content .wordpress a h1 {
+    font-size: 20px;
+    font-weight: bolder;
+    margin: 15px 0;
+  }
+  section#wordpress .wordpress-content .wordpress a h1:hover {
+    color: purple;
+    cursor: pointer;
+  }
+}
+
+section#wordpress .wordpress-content .wordpress p {
+  width: 50%;
+  margin: 0 auto 20px auto;
+  text-align: left;
+  padding-bottom: 15px;
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 15px;
+}
+
+section#wordpress .wordpress-content .wordpress h4 {
+  width: 50%;
+  margin: 0 auto 10px auto;
   color: #fff;
   font-size: 12px;
   text-align: center;
-  margin: 0 0 10px 0;
   padding: 0;
 }
 
