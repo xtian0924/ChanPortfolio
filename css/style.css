@@ -563,7 +563,7 @@ section#wordpress .wordpress-content .wordpress a img {
 @media (min-width: 768px) {
   section#wordpress .wordpress-content .wordpress a img {
     height: 400px;
-    width: 70%;
+    width: 50%;
     position: relative;
     left: 50%;
     -webkit-transform: translateX(-50%);
